@@ -1,20 +1,20 @@
 name: Build and Deploy
 on:
-    push:
-        tags:
-            - v*
+  push:
+    tags:
+      - v*
 jobs:
-    build:
-        name: Build application
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2.0.0
-            - uses: actions/setup-node@v1.1.0
-              with:
-                node-version: '10.x'
-            - run: yarn install
-            - run: yarn build
-            - uses: actions/upload-artifact@v1.0.0
-              with:
-                name: application
-                path: build/
+  build:
+    name: Build application
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.0.0
+    - uses: actions/setup-node@v1.1.0
+      with:
+        node-version: '10.x'
+    - run: yarn install
+    - run: yarn build
+    - uses: actions/upload-artifact@v1.0.0
+      with:
+        name: application
+        path: build/
