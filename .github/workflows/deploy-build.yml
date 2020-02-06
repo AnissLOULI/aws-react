@@ -32,7 +32,7 @@ jobs:
           python-version: '3.x'
       - run: pip install awscli
       - name: Configure AWS credential
-        uses: aws-actions/configure-aws-credential@v1 region:eu-west-3
+        uses: aws-actions/configure-aws-credential@v1
         with:
           aws-acces-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-acces-key: ${{ secrets.AWS_SECRET_ACCES_KEY }}
